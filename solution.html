@@ -3,28 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="HTML, CSS & JS Quiz">
-    <title>Quiz App</title>
-    <link rel="shortcut icon" href="#">
+    <meta name="description" content="A 9 question quiz on public safety knowledge">
+    <title>Public Safety Quiz</title>
     <link href="solution.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
   </head>
   <body>
     <header class="banner">
-        <div class="question-and-score"></div>
+        <div class="questionScore"></div>
     </header>
     <header class="header">
-      <div class="row">
         <div class="titleHeader">
           <h1>Somebody call 9-1-1!</h1>    
-        </div>
       </div>
     </header>
     <main role="main" aria-live="assertive">
-      <fieldset>
+      <form class="questionForm">
         <div class="formBox">
           <div class="fieldText">
-            <legend>oh no, its the cops</legend>
+            <h3 class="startHeader">oh no, its the cops</h3>
             <p>A quiz to test the most basic elements of public safety - presented by yours truly, a real life emergency dispatcher. Think you've got what it takes? I sure hope you do.</p>
           </div>
         </div>
@@ -33,7 +30,7 @@
             <button type="button" id="start">Bring it on</button>
           </div>
         </div>
-      </fieldset>
+      </form>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="store.js"></script>

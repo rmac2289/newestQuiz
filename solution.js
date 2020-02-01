@@ -15,7 +15,7 @@ function updateQuestionAndScore() {
       <li id="js-score">score: ${STORE.score}/${STORE.questions.length}</li>
       <img id="car" src="./ambulance.svg" alt="ambulance">
     </ul>`);
-  $(".question-and-score").html(html);
+  $(".questionScore").html(html);
 }
 
 /* Displays the options for the current question */
@@ -41,14 +41,14 @@ function renderQuestion() {
   <div>
     <form id="js-questions" class="question-form">
       
-      <fieldset>
+      <form>
         <div class="fieldBox question">
           <div class="fieldText">
             <legend> ${question.question}</legend>
           </div>
         </div>
 
-        <div class="row options">
+        <div class="options">
           <div class="buttonBox">
             <div class="js-options"> </div>
         </div>
@@ -59,7 +59,7 @@ function renderQuestion() {
           <button type = "button" id="next-question" tabindex="6"> Next </button>
         </div>
       </div>
-    </fieldset>
+    </form>
     </form>
   </div>`);
 $("main").html(questionHtml);
@@ -71,21 +71,14 @@ $("#next-question").hide();
 function displayResults() {
   let resultHtml = $(
     `<div class="results">
-      <form id="js-restart-quiz">
-        <fieldset>
-          <div class="row">
-            <div class="col-12">
-              <legend>Your Score is: ${STORE.score}/${STORE.questions.length}</legend>
-            </div>
+      <form id="restartQuiz">
+          <section>
+            <p>You made it through! Your score this time around is <strong>${STORE.score}</strong> out of a possible <strong>${STORE.questions.length}</strong>. Think you can do better? Hit restart and give it a go!</p>
+          </section>
+          <div>
+            <button type="button" id="restart">Restart</button>
           </div>
-        
-          <div class="row">
-            <div class="col-12">
-              <button type="button" id="restart"> Restart Quiz </button>
-            </div>
-          </div>
-        </fieldset>
-    </form>
+      </form>
     </div>`);
     STORE.currentQuestion = 0;
     STORE.score = 0;
@@ -105,11 +98,11 @@ function handleSelectOption() {
   $('body').on("submit",'#js-questions', function(event) {
     event.preventDefault();
     let currentQues = STORE.questions[STORE.currentQuestion];
-    let selectedOption = $("input[name=options]:checked").val();
-    let id_num = currentQues.options.findIndex(i => i === selectedOption);
+    let userChoice = $("input[name=options]:checked").val();
+    let id_num = currentQues.options.findIndex(i => i === userChoice);
     let id = "#js-r" + ++id_num;
     $('span').removeClass("right-answer wrong-answer");
-    if(selectedOption === currentQues.answer) {
+    if(userChoice === currentQues.answer) {
       STORE.score++; 
     $(`${id}`).append(`You got it, good work!<br/>`);
       $(`${id}`).addClass("right-answer");
@@ -128,7 +121,7 @@ function handleSelectOption() {
 }
 
 function restartQuiz() {
-  $('body').on('click','#restart', (event) => {
+  $('body').on('click','#restart', function(event){
     renderQuestion();
   });
 }

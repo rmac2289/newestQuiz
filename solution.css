@@ -19,6 +19,7 @@ body {
     margin-bottom: 35px;
     font-family: 'Bebas Neue', cursive;
     font-size: 1.5em;
+    letter-spacing: .1em;
   }
   .fieldText p {
       font-size: 1.2em;
@@ -36,13 +37,13 @@ body {
     max-width: 20px;
 }
   
-.question-and-score {
+.questionScore {
     font-size: 20px;
     font-weight: 600px;
     
   }
   
-  .question-and-score ul {
+  .questionScore ul {
     
     display: flex;
     justify-content: space-around;
@@ -53,6 +54,7 @@ body {
     padding: 0 0 0 0;
     margin: 0 0 0 0;
     height: 75px;
+    border-bottom: 2px solid white;
   }
 
   button {
@@ -63,21 +65,24 @@ body {
     text-align: center;
     margin-bottom: 0;
     padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid black;
   }
   
-  fieldset {
+  form {
     width:60%;
     padding: 40px;
-    margin:auto;
+    margin:auto auto 45px auto;
     background: white;
     min-height: 300px;
-    border-radius: 5px;
+    border-radius: 4px;
+    border: 5px inset;
     
   }
   
-  legend {
+  .startHeader {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1.2em;
   }
   
@@ -125,6 +130,11 @@ body {
    .buttondiv {
       text-align: center;
   }
+ .results {
+   line-height: 1.2em;
+   font-size: 1.5em;
+   text-align: center;
+ }
  
   
  
