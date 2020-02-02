@@ -143,7 +143,22 @@ body {
    font-size: 1.5em;
    text-align: center;
  }
- 
+ @media only screen and (min-width: 320px) and (max-width: 520px){
+  body {
+    display: flex;
+    flex-direction: column;
+  } 
+  .header {
+    padding-bottom: 25px;
+  }
+  main {
+     display: flex;
+   }
+   .right, .wrong {
+     border: none;
+   }
+
+ }
   
  
   
