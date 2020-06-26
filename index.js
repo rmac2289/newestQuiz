@@ -8,11 +8,11 @@ function startQuiz(){
 function updateCounters(){
   $(".questionScore").html(`
     <ul>
-       <img id="car" src="./firefighter.svg" alt="fire truck">
+       <img id="car" src="./images/firefighter.svg" alt="fire truck">
       <li id="js-answered">question: ${STORE.currentQuestion + 1}/${STORE.questions.length}</li>
-      <img id="car" src="./car.svg" alt="police car">
+      <img id="car" src="./images/car.svg" alt="police car">
       <li id="score">score: ${STORE.score}/${STORE.questions.length}</li>
-      <img id="car" src="./ambulance.svg" alt="ambulance">
+      <img id="car" src="./images/ambulance.svg" alt="ambulance">
     </ul>`);
 }
 
@@ -83,7 +83,7 @@ function handleRightOrWrong(){
         $(`${id}`).append(`You got it, good work!<br/>`);
         $(`${id}`).addClass("right");
     }  else {
-        $(`${id}`).append(`<img id="icon" src="./warning.svg">Incorrect! The answer is "${currentQ.answer}"<br/>`);
+        $(`${id}`).append(`<img id="icon" src="./images/warning.svg">Incorrect! The answer is "${currentQ.answer}"<br/>`);
         $(`${id}`).addClass("wrong");
     }
 
